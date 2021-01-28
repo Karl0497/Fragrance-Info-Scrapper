@@ -67,7 +67,7 @@ namespace FragranceInfo
         public static Fragrance GetFranganceInfo(string url, int row)
         {
             Console.WriteLine($"Processing {url}");
-            int attempts = 3;
+            int attempts = 4;
 
             ChromeOptions chromeOptions = new ChromeOptions();
             if (HEADLESS)
@@ -90,6 +90,7 @@ namespace FragranceInfo
             {
                 try
                 {
+                    Thread.Sleep(500);
                     Console.WriteLine($"{attempts} attempts left for {url}");
                     fragance.GetAllAttributes();
                     break;
